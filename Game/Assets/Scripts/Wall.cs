@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-    public Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigid2D;
     public float moveSpeed = 3f;
 
     void Start()
     {
-        rigidbody2D.rotation = Random.Range(0f, 360f);
+        rigid2D.rotation = Random.Range(0f, 360f);
         transform.localScale = Vector3.one * 10f;
     }
 
