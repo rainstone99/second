@@ -237,7 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d626fb886d163b4b8492a6bbaf88a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  ScoreText: {fileID: 0}
+  score: 0
 --- !u!1 &653068102
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +417,7 @@ GameObject:
   - component: {fileID: 890501531}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,6 +461,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1051587533}
   - component: {fileID: 1051587532}
+  - component: {fileID: 1051587534}
+  - component: {fileID: 1051587535}
+  - component: {fileID: 1051587536}
   m_Layer: 0
   m_Name: Center
   m_TagString: Untagged
@@ -537,6 +541,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051587534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051587531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8dcf4bfabb2944ab8a87e65a1579cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreAmount: {fileID: 1363173277}
+--- !u!58 &1051587535
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051587531}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.1
+--- !u!114 &1051587536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051587531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d626fb886d163b4b8492a6bbaf88a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 1503828768}
+  score: 0
 --- !u!1 &1363173272
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,8 +616,9 @@ GameObject:
   - component: {fileID: 1363173275}
   - component: {fileID: 1363173274}
   - component: {fileID: 1363173273}
+  - component: {fileID: 1363173277}
   m_Layer: 5
-  m_Name: UI
+  m_Name: ScoreUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,6 +707,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1363173277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363173272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d626fb886d163b4b8492a6bbaf88a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 1503828768}
+  score: 0
 --- !u!1 &1503828766
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95.095795, y: 187.67}
-  m_SizeDelta: {x: 609.8083, y: 74.6535}
+  m_AnchoredPosition: {x: 0.000022888, y: 187.67}
+  m_SizeDelta: {x: 800, y: 74.6535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503828768
 MonoBehaviour:
@@ -709,7 +791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC810\uC218 :"
+  m_Text: "\uC810\uC218 :   "
 --- !u!222 &1503828769
 CanvasRenderer:
   m_ObjectHideFlags: 0

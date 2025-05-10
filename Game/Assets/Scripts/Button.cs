@@ -5,12 +5,12 @@ public class Button : MonoBehaviour
 {
     public void PlayAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Game");
     }
 
     public void ToMain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene("Main");
     }
     public void Quit()
     {
@@ -19,7 +19,7 @@ public class Button : MonoBehaviour
     
     public void GameStart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   
+        SceneManager.LoadScene("Game");   
     }
 
 }
