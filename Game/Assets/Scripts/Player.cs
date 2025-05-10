@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        movement = Input.GetAxis("Horizontal");
+        movement = Input.GetAxisRaw("Horizontal");
     }
 
     private void FixedUpdate()
@@ -17,8 +17,8 @@ public class Player : MonoBehaviour
         transform.RotateAround(Vector3.zero, Vector3.forward, movement * Time.fixedDeltaTime * -speed);
     }
 
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    // }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
