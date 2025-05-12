@@ -1,3 +1,4 @@
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,9 +18,11 @@ public class ScoreAmount : MonoBehaviour
     {
         ScoreText.text = "점수 : " + score.ToString();
     }
-    void Awake() //이 부분 지피티 썼습니다...
+    void Awake()
     {
         if (Instance == null)
             Instance = this;
+        else if (Instance != null)
+            Instance = null;
     }
 }
